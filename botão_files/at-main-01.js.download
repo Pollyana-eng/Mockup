@@ -1,0 +1,39 @@
+(function(){
+
+    var opennav_btn = document.getElementById("at-opennav-btn");
+    var navmain_menu = document.getElementById("at-navmain");
+    var navmain_style;
+
+    if (typeof window.getComputedStyle != "undefined") {
+        navmain_style = window.getComputedStyle(navmain_menu, null);
+    } else if (navmain_menu.currentStyle != "undefined") {
+        navmain_style = navmain_menu.currentStyle;
+    }
+   
+    opennav_btn.addEventListener('click',function(e){
+
+      if(navmain_style.display != "block"){
+          navmain_menu.style.display = "block";
+      }else{
+          navmain_menu.style.display = "none";
+      }
+
+      e.stopPropagation();
+
+    },false);
+
+    navmain_menu.addEventListener('click',function(e){
+
+      e.stopPropagation();
+
+    },false);
+
+
+    document.onclick = function(e){
+      if(e.target != opennav_btn){
+        navmain_menu.style.display = "none";
+      }
+    };
+
+
+})();
