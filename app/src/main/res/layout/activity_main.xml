@@ -29,7 +29,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="24dp"
-        android:text="    Lorem ipsum dolor sit amet,  consectetur adipiscing elit. Ut  vitae massa dapibus, rutrum nunc  et, tristique nisl. Duis suscipit leo  nulla, et varius magna finibus in.  Suspendisse henfrerit rhoncus lacinia."
+        android:text="@string/lipsum"
         android:textAlignment="center"
         android:textIsSelectable="false"
         android:textSize="22sp"
@@ -54,11 +54,11 @@
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
-        android:text="Experimente!"
-        android:textColor="#BF271F"
+        android:text="@string/campoExperimente"
+        android:textColor="@color/colorSegunda"
         android:textSize="30sp"
         app:layout_constraintEnd_toStartOf="@+id/textView2"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 

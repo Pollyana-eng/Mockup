@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Mockup</string>
+    <string name="btnEntrar">entrar</string>
+    <string name="camposenha">Senha</string>
+    <string name="campoEmail">E-mail</string>
+    <string name="btnEsqueceu">Esqueceu sua senha?</string>
+    <string name="btnCadastre">Não é cadastrado? Cadastre-se</string>
+    <string name="campoAcesso">Ou acesse com:</string>
+    <string name="lipsum">    Lorem ipsum dolor sit amet,  consectetur adipiscing elit. Ut  vitae massa dapibus, rutrum nunc  et, tristique nisl. Duis suscipit leo  nulla, et varius magna finibus in.  Suspendisse henfrerit rhoncus lacinia.</string>
+    <string name="campoExperimente">Experimente!</string>
 </resources>
