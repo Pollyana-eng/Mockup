@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".telamapa"></activity>
+        <activity android:name=".home"></activity>
         <activity android:name=".Tela2" />
         <activity android:name=".MainActivity">
             <intent-filter>

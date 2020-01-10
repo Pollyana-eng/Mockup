@@ -13,6 +13,11 @@ public class Tela2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela2);
     }
+    public void proximaTela(View view){
+
+        Intent intent = new Intent(this,home.class);
+        startActivity(intent);
+    }
 
 
 }

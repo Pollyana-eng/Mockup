@@ -1,8 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
 
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="right"
+    android:orientation="vertical">
 
-</LinearLayout>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#bf271f"
+        android:minHeight="60dp"
+        android:titleTextColor="@android:color/white"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_edutor_absoluteY="1dp">
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/menu"
+            tools:layout_editor_absoluteX="46dp"
+            tools:layout_edutor_absoluteY="220dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="A Diligência"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/angry_btn"
+
+            android:layout_width="35dp"
+            android:layout_height="33dp"
+            android:layout_gravity="right"
+
+            android:background="@drawable/numero"
+            android:paddingRight="0sp"
+            android:shadowColor="#A81890"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:text="1"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/imageButton6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="@android:color/transparent"
+            android:paddingRight="10sp"
+            app:srcCompat="@drawable/sino" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@color/bordo"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="302dp"
+            android:layout_height="46dp"
+            android:layout_margin="12sp"
+            android:background="@color/colorSegunda"
+            android:drawableLeft="@drawable/lupa" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="52dp"
+            android:layout_height="42dp"
+            android:layout_gravity="right"
+            android:drawableTop="@drawable/filter"
+            android:gravity="top" />
+
+        </LinearLayout>
+
+    
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+

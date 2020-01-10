@@ -84,7 +84,7 @@
         android:drawableLeft="@drawable/seta"
         android:drawablePadding="3dp"
         android:drawingCacheQuality="high"
-        android:onClick="entrar"
+        android:onClick="proximaTela"
         android:paddingLeft="90dp"
         android:paddingRight="90dp"
         android:shadowColor="#870F02"
