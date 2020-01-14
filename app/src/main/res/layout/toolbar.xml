@@ -68,23 +68,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="106dp"
+        android:layout_height="75dp"
         android:background="@color/bordo"
         android:orientation="vertical">
 
 
-        <ImageButton
-            android:id="@+id/imageButton5"
-            android:layout_width="51dp"
-            android:layout_height="50dp"
-            android:layout_gravity="right"
-            android:layout_marginRight="50sp"
-            android:background="@android:color/transparent"
-            app:srcCompat="@drawable/filterss" />
-
         <EditText
-            android:layout_width="277dp"
-            android:layout_height="60dp"
+            android:layout_width="281dp"
+            android:layout_height="45dp"
             android:layout_margin="12sp"
             android:background="@color/colorSegunda"
             android:drawableLeft="@drawable/lupa"
