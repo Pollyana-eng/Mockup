@@ -19,5 +19,11 @@ public class Tela2 extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void Tela2(View view) {
+
+        Intent intent = new Intent(this, Cadastro.class);
+        startActivity(intent);
+    }
+
 
 }
