@@ -57,7 +57,7 @@ public class Cadastro extends AppCompatActivity {
                 }
 
             }
-        }
+        });
     }
 
 }
