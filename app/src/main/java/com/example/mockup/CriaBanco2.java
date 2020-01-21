@@ -12,7 +12,7 @@ public class CriaBanco2 extends SQLiteOpenHelper {
     public static final String NOME = "nome";
     public static final String EMAIL = "email";
     public static final String SENHA = "senha";
-    private static final int VERSAO = 1;
+    private static final int VERSAO = 2;
 
     public CriaBanco2(Context context){
         super(context, NOME_BANCO, null,VERSAO);
@@ -31,7 +31,7 @@ public class CriaBanco2 extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE [IF EXISTS]."+ TABELA);
+        db.execSQL("DROP TABLE IF EXISTS usuarios");
         onCreate(db);
     }
 

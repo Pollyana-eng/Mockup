@@ -17,6 +17,7 @@ public class Cadastro extends AppCompatActivity {
         setContentView(R.layout.activity_cadastro);
         Button botao = (Button) findViewById(R.id.angry_btn);
 
+
         botao.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -30,6 +31,7 @@ public class Cadastro extends AppCompatActivity {
                 String EmailString = Email.getText().toString();
                 String SenhaString = Senha.getText().toString();
                 String RepitaSenhaString = RepitaSenha.getText().toString();
+                BancoController crud = new BancoController(getBaseContext());
 
                 if(NomeString.isEmpty() || EmailString.isEmpty() || SenhaString.isEmpty() || RepitaSenhaString.isEmpty()) {
 
@@ -40,8 +42,7 @@ public class Cadastro extends AppCompatActivity {
 
                 }else{
                     if (SenhaString.equals(RepitaSenhaString)) {
-                        String resultado = "cadastrou";
-
+                        String  resultado = crud.insereDado(NomeString,EmailString,SenhaString);
 
                         Toast toast = Toast.makeText(getApplicationContext(),
                         resultado, Toast.LENGTH_SHORT);
