@@ -9,19 +9,19 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Tela2 extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela2);
+        setContentView(R.layout.activity_login);
 
 
     }
 
     public void login(View view) {
-        EditText Email = findViewById(R.id.Email);
-        EditText Senha = findViewById(R.id.Senha);
+        EditText Email = findViewById(R.id.EmailLogin);
+        EditText Senha = findViewById(R.id.SenhaLogin);
         String strEmail = Email.getText().toString();
         String strSenha = Senha.getText().toString();
         boolean erro = false;
@@ -33,8 +33,8 @@ public class Tela2 extends AppCompatActivity {
                 erro = true;
 
             } else {
-                String resEmail = cursor.getString(cursor.getColumnIndex("Email"));
-                String resSenha = cursor.getString(cursor.getColumnIndex("Senha"));
+                String resEmail = cursor.getString(cursor.getColumnIndex("email"));
+                String resSenha = cursor.getString(cursor.getColumnIndex("senha"));
 
                 if (strEmail.equals(resEmail) && strSenha.equals(resSenha)) {
                     Toast.makeText(getApplicationContext(), "Seja bem-vindo", Toast.LENGTH_LONG).show();
@@ -47,24 +47,14 @@ public class Tela2 extends AppCompatActivity {
 
                 }
             }
-        }else{
+        } else {
             erro = true;
         }
-        if (erro)
+        if (erro) {
             Toast.makeText(getApplicationContext(), "Credenciais incorretas.", Toast.LENGTH_LONG).show();
-
-
+        }
     }
 
-
-
-
-
-    public void proximaTela(View view){
-
-        Intent intent = new Intent(this,home.class);
-        startActivity(intent);
-    }
 
     public void Tela2(View view) {
 

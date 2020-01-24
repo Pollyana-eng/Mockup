@@ -1,21 +1,40 @@
 package com.example.mockup;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
-
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
+    private DrawerLayout drawer;
     private GoogleMap mMap;
+
+    //declara variaveis para permissão location
+    private static final String[] LOCATION_PERMS={
+            Manifest.permission.ACCESS_FINE_LOCATION
+    };
+    private static final int INITIAL_REQUEST=1337;
+    private static final int LOCATION_REQUEST=INITIAL_REQUEST+3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +44,27 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-    }
 
+        Toolbar mytoolbar = (Toolbar)findViewById(R.id.my_toolbar);
+        setSupportActionBar(mytoolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+
+        drawer = findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, mytoolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+
+    }
+    @Override
+    public void onBackPressed() {
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
 
 
     @Override
@@ -38,31 +76,44 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng esteio = new LatLng(-29.8524632, -51.1845758);
         LatLng saoLeopoldo = new LatLng(-29.761273, -51.145735);
         LatLng sapucaia = new LatLng(-29.764196, -51.144060);
-        LatLng canoas = new LatLng(-29.918437, -51.182065);
-        LatLng fenac = new LatLng(-29.703625, -51.138389);
-        LatLng polisinos = new LatLng(-29.772845, -51.127422);
-        LatLng unisinos = new LatLng(-29.795274, -51.152163);
 
-        mMap.addMarker(new MarkerOptions().position(esteio).title("Marker em Esteio"));
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.addMarker(new MarkerOptions().position(saoLeopoldo).title("Marker in São Leopoldo"));
-        mMap.addMarker(new MarkerOptions().position(sapucaia).title("Marker in Sapucaia"));
-        mMap.addMarker(new MarkerOptions().position(canoas).title("Marker in Canoas"));
-        mMap.addMarker(new MarkerOptions().position(fenac).title("Marker in Fenac"));
-        mMap.addMarker(new MarkerOptions().position(polisinos).title("Marker em Polisinos"));
-        mMap.addMarker(new MarkerOptions().position(unisinos).title("Marker em Unisinos"));
+
+        mMap.addMarker(new MarkerOptions().position(esteio).title("Marker em Esteio").icon(BitmapDescriptorFactory.fromResource(R.drawable.pin)));
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney").icon(BitmapDescriptorFactory.fromResource(R.drawable.pin)));
+        mMap.addMarker(new MarkerOptions().position(saoLeopoldo).title("Marker in São Leopoldo").icon(BitmapDescriptorFactory.fromResource(R.drawable.pin)));
+        mMap.addMarker(new MarkerOptions().position(sapucaia).title("Marker in Sapucaia").icon(BitmapDescriptorFactory.fromResource(R.drawable.pin)));
+
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
         //setar o room do mapa
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney, 12.0f));
         //mostra controle de zoom
         mMap.getUiSettings().setZoomControlsEnabled(true);
+        //verifica se é permitido ao aplicativo pegar a localização atual do dispositivo
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            mMap.setMyLocationEnabled(true);
+        } else {
+            //caso ainda não tenha sido dada a permissão, solicitar a permissão
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                requestPermissions(LOCATION_PERMS, LOCATION_REQUEST);
+            }
+        }
 
         //adiciona rota
         mMap.addPolyline(new PolylineOptions()
                 .add(sydney, esteio)
                 .width(5)
                 .color(Color.RED));
+
+        mMap.addCircle(
+                new CircleOptions()
+                  .center(esteio)
+                  .radius(1580.0)
+                  .strokeWidth(3f)
+                  .strokeColor(Color.RED)
+                  .fillColor(Color.argb(70,150,50,50))
+        );
 
     }
 }

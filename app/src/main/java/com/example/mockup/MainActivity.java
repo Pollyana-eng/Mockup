@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,15 +14,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
     }
-
-
-
 
     public void proximaTela(View view) {
 
-        Intent intent = new Intent(this, Tela2.class);
+        Intent intent = new Intent(this, Login.class);
         startActivity(intent);
     }
 }

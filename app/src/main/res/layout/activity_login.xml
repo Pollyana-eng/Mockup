@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradiente">
-    tools:context=".Tela2">
+    android:background="@drawable/gradiente"><![CDATA[
+    tools:context=".Login">
+
+    ]]>
 
     <ImageView
         android:id="@+id/imageView2"
@@ -13,42 +15,44 @@
         android:layout_height="110dp"
         android:layout_marginStart="56dp"
         android:layout_marginLeft="56dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="56dp"
         android:layout_marginRight="56dp"
         android:layout_marginBottom="82dp"
         app:layout_constraintBottom_toTopOf="@+id/Email"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
 
     <EditText
-        android:id="@+id/Email"
+        android:id="@+id/EmailLogin"
         android:layout_width="361dp"
         android:layout_height="46dp"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="72dp"
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
         android:layout_marginBottom="19dp"
         android:drawableLeft="@drawable/envelope"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:inputType="textEmailAddress"
         android:hint="@string/campoEmail"
+        android:inputType="textEmailAddress"
         android:textColor="@color/branco"
         android:textColorHighlight="#FFFFFF"
         android:textColorHint="#fff"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/Senha"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
-        android:id="@+id/Senha"
+        android:id="@+id/SenhaLogin"
         android:layout_width="367dp"
         android:layout_height="47dp"
         android:layout_marginStart="22dp"
@@ -60,15 +64,16 @@
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="@string/camposenha"
-        android:textColorHighlight="#FFFFFF"
         android:inputType="textPersonName"
         android:textColor="@color/branco"
+        android:textColorHighlight="#FFFFFF"
         android:textColorHint="#fff"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Email" />
+        app:layout_constraintTop_toBottomOf="@+id/EmailLogin" />
 
     <Button
         android:id="@+id/angry_btn"
@@ -86,7 +91,7 @@
         android:drawableLeft="@drawable/seta"
         android:drawablePadding="3dp"
         android:drawingCacheQuality="high"
-        android:onClick="proximaTela"
+        android:onClick="login"
         android:paddingLeft="90dp"
         android:paddingRight="90dp"
         android:shadowColor="#870F02"
@@ -116,8 +121,9 @@
         android:textIsSelectable="true"
         app:layout_constraintBottom_toTopOf="@+id/angry_btn"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Senha" />
+        app:layout_constraintTop_toBottomOf="@+id/SenhaLogin" />
 
     <Button
         android:id="@+id/button3"

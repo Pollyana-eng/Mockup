@@ -22,9 +22,9 @@ public class Cadastro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                EditText Nome = (EditText)findViewById(R.id.Nome);
-                EditText Email = (EditText)findViewById(R.id.Email);
-                EditText Senha = (EditText)findViewById(R.id.Senha);
+                EditText Nome = (EditText)findViewById(R.id.NomeLogin);
+                EditText Email = (EditText)findViewById(R.id.EmailLogin);
+                EditText Senha = (EditText)findViewById(R.id.SenhaLogin);
                 EditText RepitaSenha = (EditText)findViewById(R.id.RepitaSenha);
 
                 String NomeString = Nome.getText().toString();
