@@ -27,5 +27,6 @@
     <string name="title_activity_maps">Map</string>
 
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="title_activity_exerciciomapa">Map</string>
 
 </resources>

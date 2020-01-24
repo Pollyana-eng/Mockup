@@ -38,7 +38,7 @@ public class Login extends AppCompatActivity {
 
                 if (strEmail.equals(resEmail) && strSenha.equals(resSenha)) {
                     Toast.makeText(getApplicationContext(), "Seja bem-vindo", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(this, home.class);
+                    Intent intent = new Intent(this, MapsActivity.class);
                     startActivity(intent);
 
 
@@ -62,5 +62,12 @@ public class Login extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void proximaTela(View view) {
 
+        Toast.makeText(getApplicationContext(), "Seja bem-vindo", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, Exerciciomapa.class);
+        startActivity(intent);
+
+
+    }
 }

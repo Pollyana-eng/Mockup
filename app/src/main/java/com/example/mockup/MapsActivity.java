@@ -78,10 +78,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         LatLng sapucaia = new LatLng(-29.764196, -51.144060);
 
 
-        mMap.addMarker(new MarkerOptions().position(esteio).title("Marker em Esteio").icon(BitmapDescriptorFactory.fromResource(R.drawable.pin)));
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney").icon(BitmapDescriptorFactory.fromResource(R.drawable.pin)));
-        mMap.addMarker(new MarkerOptions().position(saoLeopoldo).title("Marker in São Leopoldo").icon(BitmapDescriptorFactory.fromResource(R.drawable.pin)));
-        mMap.addMarker(new MarkerOptions().position(sapucaia).title("Marker in Sapucaia").icon(BitmapDescriptorFactory.fromResource(R.drawable.pin)));
+        mMap.addMarker(new MarkerOptions().position(esteio).title("Marker em Esteio").icon(BitmapDescriptorFactory.fromResource(R.drawable.pin2)));
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney").icon(BitmapDescriptorFactory.fromResource(R.drawable.pin2)));
+        mMap.addMarker(new MarkerOptions().position(saoLeopoldo).title("Marker in São Leopoldo").icon(BitmapDescriptorFactory.fromResource(R.drawable.pin2)));
+        mMap.addMarker(new MarkerOptions().position(sapucaia).title("Marker in Sapucaia").icon(BitmapDescriptorFactory.fromResource(R.drawable.pin2)));
 
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
@@ -89,6 +89,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney, 12.0f));
         //mostra controle de zoom
         mMap.getUiSettings().setZoomControlsEnabled(true);
+
+
         //verifica se é permitido ao aplicativo pegar a localização atual do dispositivo
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
@@ -99,6 +101,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 requestPermissions(LOCATION_PERMS, LOCATION_REQUEST);
             }
         }
+
+        mMap.getUiSettings().setMyLocationButtonEnabled(true);
+        mMap.getUiSettings().setCompassEnabled(true);
 
         //adiciona rota
         mMap.addPolyline(new PolylineOptions()

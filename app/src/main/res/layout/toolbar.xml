@@ -18,14 +18,7 @@
         tools:layout_editor_absoluteX="45dp"
         tools:layout_edutor_absoluteY="1dp">
 
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            app:srcCompat="@drawable/menu"
-            tools:layout_editor_absoluteX="46dp"
-            tools:layout_edutor_absoluteY="220dp" />
+
 
         <TextView
             android:id="@+id/textView2"

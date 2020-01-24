@@ -30,9 +30,13 @@
             android:value="@string/google_maps_key" />
 
         <activity
+            android:name=".Exerciciomapa"
+            android:label="@string/title_activity_exerciciomapa"
+            android:theme="@style/NoActionBar" />
+        <activity
             android:name=".MapsActivity"
-            android:theme="@style/NoActionBar"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps"
+            android:theme="@style/NoActionBar" />
         <activity android:name=".Cadastro" />
         <activity android:name=".home" />
         <activity android:name=".Login" />
