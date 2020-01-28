@@ -75,10 +75,10 @@ public class Exerciciomapa extends AppCompatActivity implements OnMapReadyCallba
             LatLng Torres = new LatLng(-29.336783, -49.727969);
             LatLng SãoFrancisco = new LatLng(-29.444312, -50.580523);
 
-            mMap.addMarker(new MarkerOptions().position(CaxiasdoSul).title("Marker em Caxias do Sul").icon(BitmapDescriptorFactory.fromResource(R.drawable.casinha)));
-            mMap.addMarker(new MarkerOptions().position(Gramado).title("Marker em Gramado").icon(BitmapDescriptorFactory.fromResource(R.drawable.casinha)));
+            mMap.addMarker(new MarkerOptions().position(CaxiasdoSul).title("Marker em Caxias do Sul").icon(BitmapDescriptorFactory.fromResource(R.drawable.caxias)));
+            mMap.addMarker(new MarkerOptions().position(Gramado).title("Marker em Gramado").icon(BitmapDescriptorFactory.fromResource(R.drawable.arvorepng)));
             mMap.addMarker(new MarkerOptions().position(PortoAlegre).title("Marker em Porto Alegre").icon(BitmapDescriptorFactory.fromResource(R.drawable.casinha)));
-            mMap.addMarker(new MarkerOptions().position(Torres).title("Marker em Torres").icon(BitmapDescriptorFactory.fromResource(R.drawable.casinha)));
+            mMap.addMarker(new MarkerOptions().position(Torres).title("Marker em Torres").icon(BitmapDescriptorFactory.fromResource(R.drawable.praia)));
 
             //setar o room do mapa
             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(CaxiasdoSul, 12.0f));
@@ -112,7 +112,7 @@ public class Exerciciomapa extends AppCompatActivity implements OnMapReadyCallba
                             .radius(90000.0)
                             .strokeWidth(5f)
                             .strokeColor(Color.BLUE)
-                            .fillColor(Color.argb(31,58,137,190))
+                            .fillColor(Color.argb(61,58,137,190))
             );
 
         }
