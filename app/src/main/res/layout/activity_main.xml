@@ -35,19 +35,20 @@
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.288" />
+        app:layout_constraintVertical_bias="0.071" />
 
     <Button
         android:id="@+id/angry_btn"
 
-        android:layout_width="270dp"
-        android:layout_height="60dp"
+        android:layout_width="244dp"
+        android:layout_height="53dp"
 
         android:layout_marginStart="400dp"
         android:layout_marginLeft="400dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/buttonshape"
         android:onClick="proximaTela"
         android:shadowColor="#A8A8A8"
@@ -56,10 +57,28 @@
         android:shadowRadius="5"
         android:text="@string/campoExperimente"
         android:textColor="@color/colorSegunda"
-        android:textSize="30sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/textView2"
         app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="163dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="163dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/buttonshape"
+        android:onClick="consultaCep"
+        android:text="Consulta CEP"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/angry_btn"
+        app:layout_constraintVertical_bias="0.06" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

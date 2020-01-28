@@ -16,6 +16,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void consultaCep(View view){
+
+        Intent intent = new Intent(this, consulta_cep.class);
+        startActivity(intent);
+    }
+
     public void proximaTela(View view) {
 
         Intent intent = new Intent(this, Login.class);

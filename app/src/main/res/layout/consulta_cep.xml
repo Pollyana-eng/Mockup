@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="50dp"
+    android:layout_width="match_parent"
+    tools:context=".consulta_cep">
+
+    <EditText
+        android:id="@+id/etMain_cep"
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:digits="0123456789"
+        android:hint="CEP"
+        android:inputType="number"
+        android:textColorHighlight="#870F02"
+        android:textColorHint="#870F02"
+        android:textColor="#595959"
+        android:textSize="25sp" />
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_width="match_parent">
+
+        <Button
+            android:id="@+id/btnMain_buscarCep"
+            android:layout_width="172dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/buttonshape"
+            android:padding="10dp"
+            android:text="Buscar CEP"
+            android:textColor="#ffffff"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_height="match_parent"
+        android:id="@+id/etMain_resposta"
+        android:textColor="#595959"
+        android:textSize="20sp"
+        android:layout_width="match_parent"/>
+
+</LinearLayout>
