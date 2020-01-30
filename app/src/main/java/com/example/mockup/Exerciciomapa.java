@@ -1,6 +1,7 @@
 package com.example.mockup;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
@@ -9,10 +10,15 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -37,6 +43,8 @@ public class Exerciciomapa extends AppCompatActivity implements OnMapReadyCallba
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
+            final LocationManager manager = (LocationManager) getSystemService( Context.LOCATION_SERVICE );
+
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_exerciciomapa);
             // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -53,6 +61,13 @@ public class Exerciciomapa extends AppCompatActivity implements OnMapReadyCallba
             ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, mytoolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
             drawer.addDrawerListener(toggle);
             toggle.syncState();
+
+            if (manager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+                Toast.makeText(this, "GPS is Enabled in your devide", Toast.LENGTH_SHORT).show();
+            }else{
+                showGPSDisabledAlertToUser();
+            }
+
 
 
         }
@@ -116,6 +131,29 @@ public class Exerciciomapa extends AppCompatActivity implements OnMapReadyCallba
             );
 
         }
+
+    private void showGPSDisabledAlertToUser(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setMessage("GPS is disabled in your device. Would you like to enable it?")
+                .setCancelable(false)
+                .setPositiveButton("Goto Settings Page To Enable GPS",
+                        new DialogInterface.OnClickListener(){
+                            public void onClick(DialogInterface dialog, int id){
+                                Intent callGPSSettingIntent = new Intent(
+                                        android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                                startActivity(callGPSSettingIntent);
+                            }
+                        });
+        alertDialogBuilder.setNegativeButton("Cancel",
+                new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int id){
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = alertDialogBuilder.create();
+        alert.show();
+    }
+
 }
 
 

@@ -41,7 +41,7 @@
         android:layout_height="54dp"
         android:layout_marginStart="35dp"
         android:layout_marginLeft="35dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="28dp"
         android:layout_marginRight="28dp"
         android:layout_marginBottom="15dp"
@@ -52,6 +52,7 @@
         android:textColorHint="#fff"
         app:layout_constraintBottom_toTopOf="@+id/Email"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -61,19 +62,21 @@
         android:layout_height="54dp"
         android:layout_marginStart="35dp"
         android:layout_marginLeft="35dp"
-        android:layout_marginTop="10dp"
 
+        android:layout_marginTop="26dp"
         android:layout_marginEnd="28dp"
         android:layout_marginRight="28dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="35dp"
         android:ems="10"
         android:hint="E-mail"
-        android:textColorHint="#fff"
         android:inputType="textEmailAddress"
         android:textColor="@color/branco"
-        app:layout_constraintBottom_toTopOf="@+id/Senha"
+        android:textColorHint="#fff"
+        app:layout_constraintBottom_toTopOf="@+id/SenhaLogin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NomeLogin" />
 
     <EditText
         android:id="@+id/SenhaLogin"
@@ -85,12 +88,12 @@
         android:layout_marginEnd="28dp"
 
         android:layout_marginRight="28dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="32dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Senha:"
-        android:textColorHint="#fff"
+        android:inputType="textPersonName"
         android:textColor="@color/branco"
+        android:textColorHint="#fff"
         app:layout_constraintBottom_toTopOf="@+id/RepitaSenha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -107,15 +110,15 @@
         android:layout_marginEnd="28dp"
 
         android:layout_marginRight="28dp"
-        android:layout_marginBottom="150dp"
+        android:layout_marginBottom="160dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Repita a senha"
-        android:textColorHint="#fff"
+        android:inputType="textPersonName"
         android:textColor="@color/branco"
+        android:textColorHint="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Senha" />
 
